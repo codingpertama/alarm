@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';  
 
 class StopWatchPage extends StatefulWidget {
   const StopWatchPage({super.key});
@@ -73,13 +74,15 @@ class _StopWatchPageState extends State<StopWatchPage> {
                 InkWell(
                   onTap: () {
                     setState(() {
-                      jam = jam +1;
-                    });
-                    setState(() {
-                      menit = menit+1;
-                    });
-                    setState(() {
-                      detik = detik+1;
+                      detik = detik + 1;
+                      if(detik >= 60) {
+                        menit = menit + 1;
+                        detik = 0;
+                      }
+                      if(menit >= 60) {
+                        jam = jam + 1;
+                        menit = 0;
+                      }
                     });
                   },
                   child:

@@ -27,7 +27,7 @@ class _AlarmPageState extends State<AlarmPage> {
             Icon(
               Icons.alarm,
               size: 100,
-              color: Colors.blue,
+              color: Colors.amber,
               ),
              ),
             ),
@@ -45,6 +45,7 @@ class _AlarmPageState extends State<AlarmPage> {
           ],
       ),
        floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.amber,
         child: 
         Icon(Icons.list),
         onPressed: () {
